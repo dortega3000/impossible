@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Panel, Glyphicon } from 'react-bootstrap';
+import { Row, Col, Panel, Glyphicon, Input} from 'react-bootstrap';
 
 const Item = ({content = () => null }) => (
   <Col xs={12} sm={6} md={4} >
@@ -13,6 +13,11 @@ const Item = ({content = () => null }) => (
         </Col>
       </Row>
       <p>Some details about the thing that needs to be done.</p>
+      <Row>
+        <Col xs={12}>
+          <Input type="checkbox" label="Complete?"/>
+        </Col>
+      </Row>
     </Panel>
   </Col>
 );
