@@ -5,16 +5,21 @@ import Item from './Item.jsx';
 import ItemProgress from './ItemProgress.jsx';
 
 const ItemList = ({content = () => null }) => (
-  <Row className="show-grid">
-    <ItemProgress />
-    <Col xs={12}>
-      <a href="/edit"><Glyphicon glyph="plus"></Glyphicon> New Item</a>
-    </Col>
-    <Item />
-    <Item />
-    <Item />
-    <Item />
-    <Item />
+  <Row>
+    <Row>
+      <Col xs={10}  xsOffset={1} >
+        <ItemProgress />
+      </Col>
+    </Row>
+    <Row className="show-grid">
+      <Col xs={12}>
+        <a href="/edit"><Glyphicon glyph="plus"></Glyphicon> New Item</a>
+      </Col>
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+    </Row>
   </Row>
 );
 
