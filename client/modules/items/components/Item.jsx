@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Panel, Glyphicon, Input} from 'react-bootstrap';
 
 const Item = ({content = () => null }) => (
-  <Col xs={12} sm={6} md={4} >
+  <Col xs={12} sm={6} md={4} lg={3} >
     <Panel>
       <Row>
         <Col xs={10}  >
