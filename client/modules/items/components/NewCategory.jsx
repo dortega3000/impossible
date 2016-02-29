@@ -5,7 +5,7 @@ class NewCategory extends React.Component {
 
   constructor(){
     super();
-     this.createCategory=this.createCategory.bind(this);
+     this.create=this.create.bind(this);
   }
   render() {
     const {error} = this.props;
@@ -17,18 +17,18 @@ class NewCategory extends React.Component {
           {error ? <p style={{color: 'red'}}>{error}</p> : null}
           <form>
             <Input ref="name" type="text" placeholder="Name" />
-            <ButtonInput onClick={this.createCategory} bsStyle="primary" type="submit" value="Add Category"/>
+            <ButtonInput onClick={this.create} bsStyle="primary" type="submit" value="Add Category"/>
           </form>
         </Panel>
       </Col>
     )
   }
 
-  createCategory(e) {
+  create(e) {
     e.preventDefault();
-    const {create} = this.props;
+    const {createCategory} = this.props;
     const {name} = this.refs;
-    create(name.getValue());
+    createCategory(name.getValue());
     name.getInputDOMNode().value = '';
   }
 }

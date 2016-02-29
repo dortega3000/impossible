@@ -1,9 +1,19 @@
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
-import {Categories} from '../../lib/collections';
+import {Categories, Items} from '../../lib/collections';
 
 export default function () {
+  Meteor.publish('items.list', function () {
+    return Items.find();
+  });
+
+  Meteor.publish('items.single', function(itemId) {
+    check(itemId, String);
+    const selector = {_id: itemId};
+    return Items.find(selector);
+  });
+
   Meteor.publish('categories.list', function () {
     return Categories.find();
   });

@@ -12,4 +12,25 @@ export default function () {
       Categories.insert(category);
     }
   });
+
+  Meteor.methods({
+    'items.create'(name, description, due) {
+      check(name, String);
+      check(description, String);
+      check(due, String);
+      const createdAt = new Date();
+      const item = {name, description, due, createdAt};
+      Items.insert(item);
+    }
+  });
+
+  Meteor.methods({
+    'items.markComplete'(id, complete) {
+      check(complete, Boolean);
+      check(id, String);
+      Items.update(id, {
+        $set: {complete: complete}
+      });
+    }
+  });
 }

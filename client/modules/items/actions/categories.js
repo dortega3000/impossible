@@ -8,8 +8,10 @@ export default {
       if (err) {
         return LocalState.set('CATEGORY_CREATE_ERROR', err.message);
       }
+      else{
+        FlowRouter.go('/categories');
+      }
     });
-    FlowRouter.go('/categories');
   },
   clearErrors({LocalState}) {
     return LocalState.set('CATEGORY_CREATE_ERROR', null);

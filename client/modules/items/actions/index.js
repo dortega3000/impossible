@@ -1,7 +1,9 @@
 import categories from './categories';
+import items from './items';
 
 const actions = {
-  categories
+  categories,
+  items
 };
 
 export default actions;
