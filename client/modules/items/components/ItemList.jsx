@@ -1,11 +1,11 @@
 import React from 'react';
-import { Row, Col, Glyphicon } from 'react-bootstrap';
+import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
 
 import Item from '../containers/Item.js';
 import ItemProgress from './ItemProgress.jsx';
 
 const ItemList = ({items, percentage}) => (
-  <div>
+  <Grid>
     <Row>
       <Col xs={12}   >
         <ItemProgress percentage={percentage} />
@@ -19,7 +19,7 @@ const ItemList = ({items, percentage}) => (
         <Item key={item._id} item={item} />
       ))}
     </Row>
-  </div>
+  </Grid>
 );
 
 export default ItemList;

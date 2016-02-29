@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Row, Panel, Glyphicon} from 'react-bootstrap'
+import {Grid, Row, Col, Panel, Glyphicon} from 'react-bootstrap'
 
 const Category = ({category}) => (
 	<Col xs={12} sm={6} md={4} lg={3} key={category._id}>
@@ -10,7 +10,7 @@ const Category = ({category}) => (
 );
 
 const CategoryList = ({categories}) => (
-	<div>
+	<Grid>
 		<Row>
 			<Col xs={12}>
 				<a href="/categories/new"><Glyphicon glyph="plus"></Glyphicon>New Category</a>
@@ -19,7 +19,7 @@ const CategoryList = ({categories}) => (
 		{categories.map(category => (
 			<Category category={category} />
 		))}
-	</div>
+	</Grid>
 );
 
 export default CategoryList;

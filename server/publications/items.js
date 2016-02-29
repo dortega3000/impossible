@@ -5,6 +5,8 @@ import {Categories, Items} from '../../lib/collections';
 
 export default function () {
   Meteor.publish('items.list', function () {
+    Counts.publish(this, 'items.complete', Items.find({complete: true}), { noReady: true });
+    Counts.publish(this, 'items.total', Items.find(), { noReady: true });
     return Items.find();
   });
 
@@ -17,4 +19,5 @@ export default function () {
   Meteor.publish('categories.list', function () {
     return Categories.find();
   });
+
 }
