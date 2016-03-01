@@ -6,6 +6,7 @@ import {Tracker} from 'meteor/tracker';
 
 export default function () {
   return {
+    
     Meteor,
     FlowRouter,
     Collections,
